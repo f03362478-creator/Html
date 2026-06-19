@@ -33,7 +33,12 @@ if (Hls.isSupported()) {
 
     hls.loadSource(streamUrl);
     hls.attachMedia(video);
+
 }
+    hls.on(Hls.Events.ERROR, function(event, data) {
+    console.log("HLS ERROR:", data);
+    alert(JSON.stringify(data));
+});
 </script>
 
 </body>
